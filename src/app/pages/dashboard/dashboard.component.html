@@ -1,0 +1,6 @@
+<div class="flex flex-wrap justify-evenly">
+  <input
+    class="shadow appearance-none border rounded w-[80vw] py-2 px-3 mt-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    type="text" placeholder="Search by CPF" (keyup)="setFilteredCommunicationList()" #cpfFilter >
+  <app-card *ngFor="let communication of filteredCommunicationList" [communication]="communication"></app-card>
+</div>
