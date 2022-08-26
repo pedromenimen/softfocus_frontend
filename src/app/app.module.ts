@@ -9,9 +9,11 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { MapComponent } from './components/map/map.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { FormComponent } from './components/form/form.component';
+import { MapPageComponent } from './pages/map-page/map-page.component';
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, DashboardComponent, CardComponent],
+  declarations: [AppComponent, MapComponent, DashboardComponent, CardComponent, FormComponent, MapPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,8 +22,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     ReactiveFormsModule,
     RouterModule,
     NgxMaskModule.forRoot({
-      showMaskTyped: true,
-      dropSpecialCharacters: false
+      dropSpecialCharacters: false,
     }),
   ],
   providers: [],

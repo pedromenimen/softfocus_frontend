@@ -1,0 +1,10 @@
+.notification {
+  height: 8%;
+  width: 20%;
+  background-color: #C1F7EE;
+  margin-top: 5%;
+  margin-left: 76%;
+  transform-origin: right;
+  -webkit-animation: notify 3s ease-in-out infinite;
+  animation: notify 3s ease-in-out infinite;
+}

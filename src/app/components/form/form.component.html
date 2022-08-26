@@ -1,0 +1,77 @@
+<div class="w-full">
+
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-auto">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+        Name
+      </label>
+      <input #owner_name required
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="name" type="text" placeholder="name" mask="A*@A*.SSS">
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('owner_name')">{{error}}</p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+        Email
+      </label>
+      <input #owner_email required
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="email" type="email" placeholder="email">
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('owner_email')">{{error}}</p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">
+        CPF
+      </label>
+      <input #owner_cpf required
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="cpf" type="text" placeholder="cpf" mask="000.000.000-00">
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('owner_cpf')">{{error}}</p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+        Type
+      </label>
+      <input #type required
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="type" type="text" placeholder="type">
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('type')">{{error}}</p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="event_list" class="block text-gray-700 text-sm font-bold mb-2">Select an event</label>
+      <select id="event_list" required #event
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option disabled selected value>Escolha uma opção</option>
+        <option value="CHUVA_EXCESSIVA">Chuva Excessiva</option>
+        <option value="GEADA">Geada</option>
+        <option value="GRANIZO">Granizo</option>
+        <option value="SECA">Seca</option>
+        <option value="VENDAVAL">Vendaval</option>
+        <option value="RAIO">Raio</option>
+      </select>
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('event')">{{error}}</p>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Select a date</label>
+      <input type="date" #date required id="date"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngFor="let error of errorList">
+        <p class="text-red-500 text-xs italic" *ngIf="error.includes('date')">{{error}}</p>
+      </div>
+    </div>
+    <button (click)="handleSubmit()"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      Next</button>
+  </form>
+
+</div>

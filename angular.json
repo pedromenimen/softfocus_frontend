@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "softfocus"
+  "cli": {
+    "analytics": "310ab928-dcf3-4259-b8e9-b453f0508c0d"
+  }
 }

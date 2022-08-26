@@ -2,7 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 import { Observable } from 'rxjs';
-import { CommunicationList, Coord, MapClickEvent } from 'types';
+import {
+  CommunicationList,
+  Coord,
+  MapClickEvent,
+  RequestFields,
+  ResponseFields,
+} from 'types';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +16,7 @@ import { CommunicationList, Coord, MapClickEvent } from 'types';
 export class ApiServicesService {
   constructor(private http: HttpClient) {}
   coord: Coord;
+  form: Partial<RequestFields>;
 
   initializeMap() {
     let brazilCoord: Coord = { lat: -14.235004, lng: -51.925282 };
@@ -76,5 +83,11 @@ export class ApiServicesService {
         `https://softfocus.herokuapp.com/api/communication/`
       );
     }
+  }
+  createCommunication(data: RequestFields): Observable<ResponseFields> {
+    return this.http.post<ResponseFields>(
+      'https://softfocus.herokuapp.com/api/communication/',
+      data
+    )
   }
 }
