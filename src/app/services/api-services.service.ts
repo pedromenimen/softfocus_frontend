@@ -76,7 +76,7 @@ export class ApiServicesService {
   getCommunicationList(cpf: string = ''): Observable<CommunicationList> {
     if (cpf.length > 0) {
       return this.http.get<CommunicationList>(
-        `https://softfocus.herokuapp.com/api/communication/${cpf}/`
+        `https://softfocus.herokuapp.com/api/list/communication/${cpf}/`
       );
     } else {
       return this.http.get<CommunicationList>(
@@ -88,6 +88,12 @@ export class ApiServicesService {
     return this.http.post<ResponseFields>(
       'https://softfocus.herokuapp.com/api/communication/',
       data
-    )
+    );
+  }
+
+  deleteCommunication(id: string): Observable<{}> {
+    return this.http.delete<ResponseFields>(
+      `https://softfocus.herokuapp.com/api/communication/${id}/`
+    );
   }
 }
